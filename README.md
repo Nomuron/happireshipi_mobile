@@ -1,6 +1,9 @@
 # happireshipi_mobile
 Happireshipi end project for "Programming Mobile Applications" course
 
+## Authors:
+Patryk Klimek, Alicja Szczypior, Katarzyna Popieniuk
+
 ## Functionalities (priority level defined on a base of MoSCoW scale)
 ### MVP:
 - showing list of recipes(M)
