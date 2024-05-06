@@ -4,6 +4,11 @@ Happireshipi end project for "Programming Mobile Applications" course
 ## Authors:
 Patryk Klimek, Alicja Szczypior, Katarzyna Popieniuk
 
+## Description
+Project is a mobile app which will generate shopping list based on selected recipes and the number 
+of portions of each specific meal.
+
+
 ## Functionalities (priority level defined on a base of MoSCoW scale)
 ### MVP:
 - showing list of recipes(M)
