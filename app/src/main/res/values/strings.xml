@@ -9,4 +9,6 @@
     <string name="plus_symbol">+</string>
     <string name="portions_number_input">1</string>
     <string name="add_button_text">Dodaj</string>
+    <string name="images_directory">images/</string>
+    <string name="error_loading">Error loading </string>
 </resources>

@@ -25,13 +25,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     private Context context;
     private List<Recipe> recipes;
 
-//    AssetManager assets;
+    AssetManager assets;
 
 
     public RecipesAdapter(Context context, List<Recipe> recipes) {
         this.context = context;
         this.recipes = recipes;
-//        this.assets = context.getAssets();
+        this.assets = context.getAssets();
     }
 
     @NonNull
@@ -45,15 +45,15 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.recipeName.setText(recipe.getName());
-        holder.portionsNumberInput.setHint("1");
-//        try (InputStream stream =
-//                     assets.open("images/" + recipe.getImageFileName())) {
-//            Drawable recipeImg = Drawable.createFromStream(stream, recipe.getImageFileName());
-//            holder.recipeImage.setImageDrawable(recipeImg);
-//
-//        } catch (IOException exception) {
-//            Log.e(recipe.getName(), "Error loading " + recipe.getImageFileName());
-//        }
+        holder.portionsNumberInput.setHint(getString(R.string.portions_number_input));
+        try (InputStream stream =
+                     assets.open(getString(R.string.images_directory) + recipe.getImageFileName())) {
+            Drawable recipeImg = Drawable.createFromStream(stream, recipe.getImageFileName());
+            holder.recipeImage.setImageDrawable(recipeImg);
+
+        } catch (IOException exception) {
+            Log.e(recipe.getName(), getString(R.string.error_loading) + recipe.getImageFileName());
+        }
     }
 
     @Override
@@ -61,16 +61,20 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         return recipes.size();
     }
 
+    private String getString(int resourceId) {
+        return context.getResources().getString(resourceId);
+    }
+
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView recipeName;
         EditText portionsNumberInput;
-//        ImageView recipeImage;
+        ImageView recipeImage;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             recipeName = itemView.findViewById(R.id.recipeName);
             portionsNumberInput = itemView.findViewById(R.id.portionsNumberInput);
-//            recipeImage = itemView.findViewById(R.id.recipeImage);
+            recipeImage = itemView.findViewById(R.id.recipeImage);
         }
     }
 }
