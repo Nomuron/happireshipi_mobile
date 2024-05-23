@@ -17,11 +17,18 @@ import com.example.myapplication.recipes.entity.Recipe;
 
 import java.util.List;
 
+/**
+ * Class used to load home page of HappiReshipi app
+ *
+ * @author Alicja Szczypior
+ */
 public class MainActivity extends AppCompatActivity {
-
-    private RecyclerView recyclerView;
-    private RecipesAdapter adapter;
-
+    /**
+     * Method called when the activity is starting.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down
+     *                           then this Bundle contains the data from savedInstanceState.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         Resources resources = getResources();
         List<Recipe> recipes = RecipesProvider.getRecipes(resources);
 
-        recyclerView = findViewById(R.id.recyclerViewDishesList);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewDishesList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new RecipesAdapter(this, recipes);
+        RecipesAdapter adapter = new RecipesAdapter(this, recipes);
         recyclerView.setAdapter(adapter);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
