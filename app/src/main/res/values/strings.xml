@@ -3,4 +3,12 @@
     <string name="recipes_filename">recipes.json</string>
     <string name="error_loading_recipes">Error loading recipes</string>
     <string name="shopping_list_icon">Shopping list icon</string>
+    <string name="dish_image">Dish Image</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="minus_symbol">-</string>
+    <string name="plus_symbol">+</string>
+    <string name="portions_number_input">1</string>
+    <string name="add_button_text">Dodaj</string>
+    <string name="images_directory">images/</string>
+    <string name="error_loading">Error loading </string>
 </resources>
