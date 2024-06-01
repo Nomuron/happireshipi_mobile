@@ -11,4 +11,9 @@
     <string name="add_button_text">Dodaj</string>
     <string name="images_directory">images/</string>
     <string name="error_loading">Error loading </string>
+    <string name="chosen_dishes">Wybrane dania</string>
+    <string name="dish">Danie</string>
+    <string name="portions">Porcje</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

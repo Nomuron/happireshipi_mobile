@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.recipes.entity.Cart;
 import com.example.myapplication.recipes.entity.Recipe;
 
 import java.io.IOException;
@@ -87,6 +89,35 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         } catch (IOException exception) {
             Log.e(recipe.getName(), getString(R.string.error_loading) + recipe.getImageFileName());
         }
+
+        holder.addButton.setOnClickListener(v -> {
+            int previousNumber = getCurrentPortionNumber(holder);
+            holder.portionsNumberInput.setText(String.valueOf(previousNumber + 1));
+        });
+
+        holder.substractButton.setOnClickListener(v -> {
+            int previousNumber = getCurrentPortionNumber(holder);
+            holder.portionsNumberInput.setText(String.valueOf(Math.max(previousNumber - 1, 1)));
+        });
+
+        holder.addDishToListButton.setOnClickListener(v -> {
+            int portionNumber = getCurrentPortionNumber(holder);
+            Cart.add(holder.recipeName.getText().toString(), portionNumber);
+        });
+    }
+
+    /**
+     * Returns the current meal portion number.
+     *
+     * @return The current meal portion number.
+     */
+    private static int getCurrentPortionNumber(@NonNull MyViewHolder holder) {
+        String portionInputText = holder.portionsNumberInput.getText().toString();
+        try {
+            return Integer.parseInt(portionInputText);
+        } catch (NumberFormatException e) {
+            return 1;
+        }
     }
 
     /**
@@ -110,12 +141,16 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     }
 
     /**
-     * Class which constructs a new MyViewHolder
+     * Class which represents  associated with the adapter ViewHolder
      */
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView recipeName;
         EditText portionsNumberInput;
         ImageView recipeImage;
+
+        Button addButton;
+        Button substractButton;
+        Button addDishToListButton;
 
         /**
          * Constructs a new MyViewHolder with the specified itemView.
@@ -127,6 +162,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             recipeName = itemView.findViewById(R.id.recipeName);
             portionsNumberInput = itemView.findViewById(R.id.portionsNumberInput);
             recipeImage = itemView.findViewById(R.id.recipeImage);
+            addButton = itemView.findViewById(R.id.addButton);
+            substractButton = itemView.findViewById(R.id.substractButton);
+            addDishToListButton = itemView.findViewById(R.id.addDishToList);
         }
     }
 }

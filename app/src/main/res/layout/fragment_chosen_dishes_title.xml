@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChosenDishesTitleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5DBBF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/selectedRecipesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:paddingTop="2dp"
+        android:text="@string/chosen_dishes"
+        android:textColor="#3E3425"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="#E5DBBF"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/selectedRecipeName"
+            android:layout_width="252dp"
+            android:layout_height="50dp"
+            android:paddingTop="2dp"
+            android:text="@string/dish"
+            android:textColor="#3E3425"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/selectedPortionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingTop="2dp"
+            android:text="@string/portions"
+            android:textColor="#3E3425"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSelectedRecipesList"
+            android:layout_width="412dp"
+            android:layout_height="664dp"
+            android:padding="16dp"
+            android:visibility="visible" />
+</LinearLayout>
+
+</FrameLayout>
