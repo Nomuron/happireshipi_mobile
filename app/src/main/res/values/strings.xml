@@ -19,4 +19,7 @@
     <string name="details_ingredient_amount">amount</string>
     <string name="details_ingredient_unit">unit</string>
     <string name="details_ingredient">ingredient</string>
+    <string name="chosen_dishes">Wybrane dania</string>
+    <string name="dish">Danie</string>
+    <string name="portions">Porcje</string>
 </resources>

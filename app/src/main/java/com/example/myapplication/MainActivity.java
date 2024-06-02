@@ -28,11 +28,12 @@ import com.example.myapplication.recipes.interfaces.RecipeOnClick;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class used to load home page of HappiReshipi app
  *
- * @author Alicja Szczypior, Patryk Klimek
+ * @author Alicja Szczypior, Patryk Klimek, Katarzyna Popieniuk
  */
 public class MainActivity extends AppCompatActivity implements RecipeOnClick {
     private List<Recipe> recipes;
@@ -52,11 +53,26 @@ public class MainActivity extends AppCompatActivity implements RecipeOnClick {
         Resources resources = getResources();
         recipes = RecipesProvider.getRecipes(resources);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewDishesList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView dishesListRecyclerView = findViewById(R.id.recyclerViewDishesList);
+        dishesListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         RecipesAdapter adapter = new RecipesAdapter(this, recipes, this);
-        recyclerView.setAdapter(adapter);
+        dishesListRecyclerView.setAdapter(adapter);
+
+        View selectedDishesListView = findViewById(R.id.fragmentContainerView);
+        selectedDishesListView.setVisibility(View.INVISIBLE);
+
+        findViewById(R.id.list_icon).setOnClickListener(v -> {
+            dishesListRecyclerView.setVisibility(View.INVISIBLE);
+            selectedDishesListView.setVisibility(View.VISIBLE);
+            ChosenDishesTitleFragment selectedDishesListFragment = (ChosenDishesTitleFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+            Objects.requireNonNull(selectedDishesListFragment).notifyDataSetChanged();
+        });
+
+        findViewById(R.id.logo).setOnClickListener(v -> {
+            dishesListRecyclerView.setVisibility(View.VISIBLE);
+            selectedDishesListView.setVisibility(View.INVISIBLE);
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -108,11 +124,6 @@ public class MainActivity extends AppCompatActivity implements RecipeOnClick {
         AlertDialog dialog = builder.create();
         dialog.show();
 
-        dishDetailCloseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        dishDetailCloseButton.setOnClickListener(v -> dialog.dismiss());
     }
 }
