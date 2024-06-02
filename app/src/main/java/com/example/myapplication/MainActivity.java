@@ -124,11 +124,6 @@ public class MainActivity extends AppCompatActivity implements RecipeOnClick {
         AlertDialog dialog = builder.create();
         dialog.show();
 
-        dishDetailCloseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        dishDetailCloseButton.setOnClickListener(v -> dialog.dismiss());
     }
 }

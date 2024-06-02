@@ -15,7 +15,8 @@ import com.example.myapplication.recipes.adapters.SelectedRecipesAdapter;
 
 /**
  * {@link Fragment} subclass used for selected recipes view.
- *  @author  Katarzyna Popieniuk
+ *
+ * @author Katarzyna Popieniuk
  */
 public class ChosenDishesTitleFragment extends Fragment {
 
@@ -30,7 +31,7 @@ public class ChosenDishesTitleFragment extends Fragment {
 
     /**
      * @param savedInstanceState If the fragment is being re-created from
-     * a previous saved state, this is the state.
+     *                           a previous saved state, this is the state.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,15 +39,13 @@ public class ChosenDishesTitleFragment extends Fragment {
     }
 
     /**
-     *
-     * @param inflater The LayoutInflater object that can be used to inflate
-     * any views in the fragment,
-     * @param container If non-null, this is the parent view that the fragment's
-     * UI should be attached to.  The fragment should not add the view itself,
-     * but this can be used to generate the LayoutParams of the view.
+     * @param inflater           The LayoutInflater object that can be used to inflate
+     *                           any views in the fragment,
+     * @param container          If non-null, this is the parent view that the fragment's
+     *                           UI should be attached to.  The fragment should not add the view itself,
+     *                           but this can be used to generate the LayoutParams of the view.
      * @param savedInstanceState If non-null, this fragment is being re-constructed
-     * from a previous saved state as given here.
-     *
+     *                           from a previous saved state as given here.
      * @return fragment view
      */
     @Override
@@ -63,7 +62,6 @@ public class ChosenDishesTitleFragment extends Fragment {
 
     /**
      * Notifies selected recipes RecyclerView Adapter that dataset changed
-     * @author Katarzyna Popieniuk
      */
     @SuppressLint("NotifyDataSetChanged")
     public void notifyDataSetChanged() {

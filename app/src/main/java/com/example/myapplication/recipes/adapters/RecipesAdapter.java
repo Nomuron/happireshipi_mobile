@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * Class used to load recipes and adapt it to RecyclerView component
  *
- * @author  Alicja Szczypior, Patryk Klimek, Katarzyna Popieniuk
+ * @author Alicja Szczypior, Patryk Klimek, Katarzyna Popieniuk
  */
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHolder> {
     /**
@@ -50,8 +50,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     /**
      * Constructs a new {@link RecipesAdapter}.
      *
-     * @param context The context in which the adapter is operating. Typically, this is the Activity or Fragment.
-     * @param recipes The list of {@link Recipe} objects to display in the RecyclerView.
+     * @param context  The context in which the adapter is operating. Typically, this is the Activity or Fragment.
+     * @param recipes  The list of {@link Recipe} objects to display in the RecyclerView.
      * @param listener The onClick listener custom interface. Needed to be able to set onClick functions on RecyclerView elements.
      */
     public RecipesAdapter(Context context, List<Recipe> recipes, RecipeOnClick listener) {
@@ -65,7 +65,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
      * Called when the RecyclerView needs a new {@link MyViewHolder} to represent an item.
      * This method is responsible for inflating the item layout and creating the ViewHolder.
      *
-     * @param parent The ViewGroup into which the new View will be added after it is bound to an adapter position.
+     * @param parent   The ViewGroup into which the new View will be added after it is bound to an adapter position.
      * @param viewType The view type of the new View. This parameter is used to choose the layout type if your RecyclerView has more than one item type.
      * @return A new instance of {@link MyViewHolder} that holds a View of the given view type.
      */
@@ -80,7 +80,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
      * Called by RecyclerView to display the data at the specified position. This method updates the contents
      * of the {@link MyViewHolder#itemView} to reflect the item at the given position.
      *
-     * @param holder The ViewHolder which should be updated to represent the contents of the item at the given position in the data set.
+     * @param holder   The ViewHolder which should be updated to represent the contents of the item at the given position in the data set.
      * @param position The position of the item within the adapter's data set.
      */
     @Override
