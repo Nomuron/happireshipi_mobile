@@ -11,9 +11,15 @@
     <string name="add_button_text">Dodaj</string>
     <string name="images_directory">images/</string>
     <string name="error_loading">Error loading </string>
+    <string name="details_ingredients">Składniki:</string>
+    <string name="details_preparing">Przygotowanie:</string>
+    <string name="details_recipe_name">Recipe Name</string>
+    <string name="details_close_button">X</string>
+    <string name="details_recipe_steps">Recipe</string>
+    <string name="details_ingredient_amount">amount</string>
+    <string name="details_ingredient_unit">unit</string>
+    <string name="details_ingredient">ingredient</string>
     <string name="chosen_dishes">Wybrane dania</string>
     <string name="dish">Danie</string>
     <string name="portions">Porcje</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

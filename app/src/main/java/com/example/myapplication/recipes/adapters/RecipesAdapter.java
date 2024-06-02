@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.recipes.entity.Cart;
 import com.example.myapplication.recipes.entity.Recipe;
+import com.example.myapplication.recipes.interfaces.RecipeOnClick;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +27,7 @@ import java.util.List;
 /**
  * Class used to load recipes and adapt it to RecyclerView component
  *
- * @author  Alicja Szczypior
+ * @author  Alicja Szczypior, Patryk Klimek, Katarzyna Popieniuk
  */
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHolder> {
     /**
@@ -41,17 +42,23 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
      * Asset manager
      */
     AssetManager assets;
+    /**
+     * Custom interface for onClick functions
+     */
+    private final RecipeOnClick listener;
 
     /**
      * Constructs a new {@link RecipesAdapter}.
      *
      * @param context The context in which the adapter is operating. Typically, this is the Activity or Fragment.
      * @param recipes The list of {@link Recipe} objects to display in the RecyclerView.
+     * @param listener The onClick listener custom interface. Needed to be able to set onClick functions on RecyclerView elements.
      */
-    public RecipesAdapter(Context context, List<Recipe> recipes) {
+    public RecipesAdapter(Context context, List<Recipe> recipes, RecipeOnClick listener) {
         this.context = context;
         this.recipes = recipes;
         this.assets = context.getAssets();
+        this.listener = listener;
     }
 
     /**
@@ -89,6 +96,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         } catch (IOException exception) {
             Log.e(recipe.getName(), getString(R.string.error_loading) + recipe.getImageFileName());
         }
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(v, position);
+            }
+        });
 
         holder.addButton.setOnClickListener(v -> {
             int previousNumber = getCurrentPortionNumber(holder);
