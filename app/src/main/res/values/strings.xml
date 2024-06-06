@@ -22,4 +22,5 @@
     <string name="chosen_dishes">Wybrane dania</string>
     <string name="dish">Danie</string>
     <string name="portions">Porcje</string>
+    <string name="ingredients">Składniki</string>
 </resources>

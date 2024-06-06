@@ -41,4 +41,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    testImplementation("org.mockito:mockito-core:4.3.1")
+    testImplementation("org.mockito:mockito-inline:4.3.1")
+    androidTestImplementation("org.mockito:mockito-android:4.3.1")
 }

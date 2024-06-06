@@ -25,8 +25,8 @@
       },
       {
         "name": "mąka pszenna",
-        "amount": 0.5,
-        "unit": "łyżki"
+        "amount": 15,
+        "unit": "gram"
       },
       {
         "name": "sól",
@@ -59,7 +59,7 @@
       {
         "name": "sól",
         "amount": 0.25,
-        "unit": "łyżeczki"
+        "unit": "szczypty"
       },
       {
         "name": "makaron",
@@ -79,12 +79,12 @@
       {
         "name": "ząbek czosnku",
         "amount": 0.5,
-        "unit": "sztuk"
+        "unit": "sztuki"
       },
       {
         "name": "masło",
-        "amount": 0.5,
-        "unit": "łyżki"
+        "amount": 15,
+        "unit": "gram"
       },
       {
         "name": "pieprz",
@@ -248,7 +248,7 @@
       {
         "name": "jajko",
         "amount": 1,
-        "unit": "sztuki"
+        "unit": "sztuk"
       },
       {
         "name": "szynka szwarcwaldzka",
@@ -295,8 +295,8 @@
       },
       {
         "name": "sól",
-        "amount": 0.15,
-        "unit": "łyżeczki"
+        "amount": 1,
+        "unit": "szczypty"
       },
       {
         "name": "masło",
@@ -316,7 +316,7 @@
       {
         "name": "jajko",
         "amount": 0.5,
-        "unit": "sztuki"
+        "unit": "sztuk"
       }
     ],
     "instruction": "Krok1:\nNajlepiej przygotować danie na 10 porcji. Opis poniżej względem 10 porcji.\nJedną cytrynę pokrój w najcieńsze plasterki, jak tylko potrafisz; pozbądź się pestek. Z pozostałych 4 cytryn wyciśnij sok. Połącz sok cytrynowy z 1 szklanką cukru, tworząc swego rodzaju -lemoniadę. Spróbuj, jeśli jest dla ciebie za kwaśna, dodaj trochę więcej cukru. Zanurz w niej cytryny. Odstaw na minimum godzinę, a najlepiej całą noc do lodówki. Kilkukrotnie przemieszaj, aby rozprowadzić cukier. Czym cytryna bardziej zmięknie, tym tarta wyjdzie smaczniejsza. Macerowanie przez godzinę jest czasem minimalnym, ale warto sobie zorganizować wcześniej pieczenie i nastawić cytrynę wieczorem, aby zdążyła idealnie zmięknąć. Zbyt krótki czas macerowania będzie skutkować trudnością krojenia tarty, a następnie jej jedzenia.\nKrok2:\nFormę do tarty z wyjmowanym dnem o średnicy 23 cm lub tortownicę wysmaruj masłem i obsyp mąką.\nKrok3:\n200 g mąki połącz z cukrem pudrem i 1,5 płaskiej łyżeczki soli. W garnuszku rozpuść masło, gotuj je na średnim ogniu, często mieszając, 5 – 8 minut, do momentu, aż zacznie orzechowo pachnieć i nabierać złotobrązowego koloru z ciemnymi plamkami. Ostudź palone masło.\nKrok4:\nPalone masło wlej do wcześniej przygotowanej w kroku 3 mąki; połącz wszystko drewnianą łyżką. Powstanie lekko wilgotna masa; wylep nią formę. Ciasto obsyp odrobiną mąki. Możesz pomóc sobie szklanką, dociskając nią ciasto w formę. Schłodź spód w lodówce 30 – 40 minut lub zamrażarce 10 – 15 minut, do całkowitego stężenia.\nKrok5:\nRozgrzej piekarnik do 190 stopni Celsjusza (góra-dół).\nKrok6:\nW międzyczasie przygotuj nadzienie. Wyjmij pasterki cytryny z lemoniady. Bardzo dokładnie połącz ją z 2 jajkami, 3 żółtkami, 30 g mąki i ¼ łyżeczki soli. Najlepiej zrobić to blenderem ręcznym, aby łatwo pozbyć się wszystkich grudek mąki. Uderz kilka razy miską o stół, aby pozbyć się pęcherzyków powietrza, które wytworzyły się podczas miksowania. Przełóż płynne nadzienie na mocno schłodzony spód. Ułóż plasterki cytryn po całej powierzchni.\nKrok7:\nPiecz przez 30 – 35 minut, aż nadzienie się zetnie i przestanie być -galaretkowate. Jeśli tarta zacznie nabierać rumieńców podczas pieczenia, przykryj ją folią aluminiową. Wystudź przed podaniem. Tarta najlepiej smakuje z kleksem bitej śmietany, labneh lub o mój boże, gałką lodów waniliowych.\n",
@@ -332,7 +332,7 @@
         "unit": "gram"
       },
       {
-        "name": "boczek wieprzowyr",
+        "name": "boczek wieprzowy",
         "amount": 37.5,
         "unit": "gram"
       },
@@ -347,7 +347,7 @@
         "unit": "sztuki"
       },
       {
-        "name": "cebula",
+        "name": "cebula biała",
         "amount": 0.25,
         "unit": "sztuki"
       },
@@ -362,7 +362,7 @@
         "unit": "ml"
       },
       {
-        "name": "oliwa z oliwek",
+        "name": "oliwa",
         "amount": 1,
         "unit": "łyżki"
       },
@@ -514,8 +514,8 @@
       },
       {
         "name": "sól",
-        "amount": 0.25,
-        "unit": "łyżeczki"
+        "amount": 1,
+        "unit": "szczypty"
       },
       {
         "name": "pieprz",
@@ -567,8 +567,8 @@
       },
       {
         "name": "oregano",
-        "amount": 0.15,
-        "unit": "łyżeczki"
+        "amount": 1,
+        "unit": "szczypty"
       }
     ],
     "instruction": "Krok1:\nKromki chleba tostowego posmaruj masłem.\nKrok2:\nPokrój na plasterki szynkę oraz ser.\nKrok3:\nPołóż na jedną kromkę plasterek sera oraz szynki. Posyp oregano.\nKrok4:\nPrzykryj drugą kromką. Zapiekaj przez ok. 4 min w opiekaczu.\nKrok4:\nPołóż opieczone tosty na talerze i smacznego! 1 porcja przewiduje jednego tosta.\n",
