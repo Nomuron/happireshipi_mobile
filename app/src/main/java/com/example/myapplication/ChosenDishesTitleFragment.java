@@ -12,11 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myapplication.recipes.adapters.SelectedRecipesAdapter;
+import com.example.myapplication.recipes.adapters.SelectedRecipesIngredientsAdapter;
 
 /**
  * {@link Fragment} subclass used for selected recipes view.
  *
- * @author Katarzyna Popieniuk
+ * @author Katarzyna Popieniuk, Patryk Klimek
  */
 public class ChosenDishesTitleFragment extends Fragment {
 
@@ -24,6 +25,7 @@ public class ChosenDishesTitleFragment extends Fragment {
      * Selected recipes RecyclerView Adapter
      */
     private SelectedRecipesAdapter selectedRecipesAdapter;
+    private SelectedRecipesIngredientsAdapter selectedRecipesIngredientsAdapter;
 
     public ChosenDishesTitleFragment() {
         // Required empty public constructor
@@ -57,6 +59,12 @@ public class ChosenDishesTitleFragment extends Fragment {
 
         selectedRecipesAdapter = new SelectedRecipesAdapter(getContext());
         selectedDishesListRecyclerView.setAdapter(selectedRecipesAdapter);
+
+        RecyclerView selectedRecipesIngredientsList = view.findViewById(R.id.recyclerViewSelectedRecipesIngredientsList);
+        selectedRecipesIngredientsList.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        selectedRecipesIngredientsAdapter = new SelectedRecipesIngredientsAdapter(getContext());
+        selectedRecipesIngredientsList.setAdapter(selectedRecipesIngredientsAdapter);
         return view;
     }
 
@@ -66,5 +74,6 @@ public class ChosenDishesTitleFragment extends Fragment {
     @SuppressLint("NotifyDataSetChanged")
     public void notifyDataSetChanged() {
         selectedRecipesAdapter.notifyDataSetChanged();
+        selectedRecipesIngredientsAdapter.notifyDataSetChanged();
     }
 }

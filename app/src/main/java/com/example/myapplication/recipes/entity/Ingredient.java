@@ -3,7 +3,7 @@ package com.example.myapplication.recipes.entity;
 /**
  * Represents an ingredient necessary to prepare a meal from recipe.
  *
- * @author  Katarzyna Popieniuk
+ * @author Katarzyna Popieniuk
  */
 public class Ingredient {
 
@@ -22,6 +22,23 @@ public class Ingredient {
      * Amount of the ingredient, combined with unit describes amount necessary to prepare one portion of meal
      */
     private double amount;
+
+    public Ingredient(Ingredient recipeIngredient, int portionsAmount) {
+        name = recipeIngredient.name;
+        unit = recipeIngredient.unit;
+        amount = recipeIngredient.getAmount() * portionsAmount;
+    }
+
+    // jackson-databind requirement
+    public Ingredient() {
+    }
+
+    public Ingredient(String name, String unit, double amount) {
+        this.name = name;
+        this.unit = unit;
+        this.amount = amount;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,4 +50,12 @@ public class Ingredient {
     public double getAmount() {
         return amount;
     }
+
+    /**
+     * Increases amount of the ingredient by specified value
+     */
+    public void increaseAmount(double addition) {
+        amount += addition;
+    }
+
 }
