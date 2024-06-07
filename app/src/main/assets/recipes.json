@@ -540,39 +540,6 @@
     ],
     "instruction": "Krok1:\nZe swojego kalafiora zdejmij okalające go ścisło liście i odetnij wystający głąb. Ostrożnie odetnij wszystkie różyczki kalafiora. Krok2:\nRóżyczki umieść na sitku i przepłucz pod zimną, bieżącą wodą. Po obraniu i odkrojeniu różyczek wyszło mi 790 gramów gotowych do pieczenia różyczek kalafiora. Obierz też jedną lub dwie marchewki i pokrój je w plasterki. Marchewkę można pominąć.\nKrok3:\nW małej miseczce umieść wszystkie przyprawy: łyżeczka słodkiej papryki; pół łyżeczki soli lub trochę więcej; po 1/3 płaskiej łyżeczki pieprzu, ostrej papryki i mielonego kminu; szczypta kurkumy. Wlej też cztery łyżki delikatnej oliwy lub innego oleju roślinnego. Aby kalafior był lekko słodki i bardziej się przypiekł, można dodać też odrobinę cukru pudru, miodu lub syropu. Do przypraw warto też wycisnąć jeden ząbek czosnku. Całość wymieszaj i wylej na różyczki kalafiora i plasterki marchewki.\nKrok4:\nBlaszkę umieść w piekarniku nagrzanym do 190-200 stopni. Wybierz środkową półkę i piecz warzywa do 35 minut z opcją pieczenia góra/dół. Jeśli masz małą komorę lub Twoje warzywa podpiekają się już po 10 minutach, to zmniejsz moc palnika do 180 stopni. Moje piekły się przez 30 minut. Nie przewracałam ich na drugą stronę. Jeśli jednak chcesz, by warzywa były od góry zarumienione, to pod koniec pieczenia przełącz piekarnik na opcję grillowania od góry. Porada: Na kilka minut przed końcem pieczenia można posypać całość tartym serem żółtym lub parmezanem oraz dodać pokruszone orzechy włoskie, nerkowce lub pekan. Kalafior pieczony podawaj gorący maczając go w ulubionym sosie np. czosnkowym lub jogurtowym. Warto udekorować go natką pietruszki a dla smaku skropić świeżo wyciskanym sokiem z cytryny.\n",
     "imageFileName": "00009_pieczony_kalafior.png"
-  },
-  {
-    "name": "Tosty z serem i szynką",
-    "category": "kolacja",
-    "ingredients": [
-      {
-        "name": "chleb tostowy",
-        "amount": 2,
-        "unit": "kromki"
-      },
-      {
-        "name": "ser",
-        "amount": 20,
-        "unit": "gram"
-      },
-      {
-        "name": "szynka",
-        "amount": 20,
-        "unit": "gram"
-      },
-      {
-        "name": "masło",
-        "amount": 7,
-        "unit": "gram"
-      },
-      {
-        "name": "oregano",
-        "amount": 1,
-        "unit": "szczypty"
-      }
-    ],
-    "instruction": "Krok1:\nKromki chleba tostowego posmaruj masłem.\nKrok2:\nPokrój na plasterki szynkę oraz ser.\nKrok3:\nPołóż na jedną kromkę plasterek sera oraz szynki. Posyp oregano.\nKrok4:\nPrzykryj drugą kromką. Zapiekaj przez ok. 4 min w opiekaczu.\nKrok4:\nPołóż opieczone tosty na talerze i smacznego! 1 porcja przewiduje jednego tosta.\n",
-    "imageFileName": "00010_tosty_z_serem_i_szynka.png"
   }
 ]
 

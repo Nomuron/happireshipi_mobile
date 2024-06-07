@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.recipes.control.IngredientsListGenerator;
 import com.example.myapplication.recipes.entity.Cart;
+import com.example.myapplication.recipes.entity.Ingredient;
 
 import java.util.List;
 
@@ -53,10 +54,10 @@ public class SelectedRecipesIngredientsAdapter extends RecyclerView.Adapter<Sele
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         IngredientsListGenerator ingredientListGenerator = new IngredientsListGenerator(context);
-        List<List<String>> ingredientsList = ingredientListGenerator.generateIngredientsList(Cart.getCartItems());
-        holder.recipeDetailIngredient.setText(ingredientsList.get(position).get(0));
-        holder.recipeDetailIngredientUnit.setText(ingredientsList.get(position).get(1));
-        holder.recipeDetailIngredientAmount.setText(ingredientsList.get(position).get(2));
+        List<Ingredient> ingredientsList = ingredientListGenerator.generateIngredientsList(Cart.getCartItems());
+        holder.recipeDetailIngredient.setText(ingredientsList.get(position).getName());
+        holder.recipeDetailIngredientUnit.setText(ingredientsList.get(position).getUnit());
+        holder.recipeDetailIngredientAmount.setText(String.valueOf(ingredientsList.get(position).getAmount()));
     }
 
     /**

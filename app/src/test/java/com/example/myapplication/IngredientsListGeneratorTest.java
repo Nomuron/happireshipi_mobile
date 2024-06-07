@@ -20,8 +20,10 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -44,25 +46,14 @@ public class IngredientsListGeneratorTest {
     }
 
     @Test
-    public void testGenerateIngredientsList() {
+    public void shouldGenerateIngredientsList() {
         CartItem cartItem1 = new CartItem("Spaghetti", 2);
         CartItem cartItem2 = new CartItem("Sałatka", 1);
         List<CartItem> cartItems = Arrays.asList(cartItem1, cartItem2);
 
-        Ingredient ingredient1 = mock(Ingredient.class);
-        when(ingredient1.getName()).thenReturn("pomidor");
-        when(ingredient1.getUnit()).thenReturn("kawałki");
-        when(ingredient1.getAmount()).thenReturn(2.0);
-
-        Ingredient ingredient2 = mock(Ingredient.class);
-        when(ingredient2.getName()).thenReturn("makaron");
-        when(ingredient2.getUnit()).thenReturn("gramy");
-        when(ingredient2.getAmount()).thenReturn(200.0);
-
-        Ingredient ingredient3 = mock(Ingredient.class);
-        when(ingredient3.getName()).thenReturn("sałata");
-        when(ingredient3.getUnit()).thenReturn("gramy");
-        when(ingredient3.getAmount()).thenReturn(100.0);
+        Ingredient ingredient1 = new Ingredient("pomidor", "kawałki", 2.0);
+        Ingredient ingredient2 = new Ingredient("makaron", "gramy", 200.0);
+        Ingredient ingredient3 = new Ingredient("sałata", "gramy", 100.0);
 
         Recipe recipe1 = mock(Recipe.class);
         when(recipe1.getName()).thenReturn("Spaghetti");
@@ -75,48 +66,30 @@ public class IngredientsListGeneratorTest {
         try (MockedStatic<RecipesProvider> mockedStatic = Mockito.mockStatic(RecipesProvider.class)) {
             mockedStatic.when(() -> RecipesProvider.getRecipes(resources)).thenReturn(Arrays.asList(recipe1, recipe2));
 
-            List<List<String>> ingredientsList = generator.generateIngredientsList(cartItems);
+            List<Ingredient> ingredientsList = generator.generateIngredientsList(cartItems);
 
             assertEquals(3, ingredientsList.size());
 
-            assertEquals("pomidor", ingredientsList.get(0).get(0));
-            assertEquals("kawałki", ingredientsList.get(0).get(1));
-            assertEquals("2.0", ingredientsList.get(0).get(2));
+            Optional<Ingredient> matchingIngredient = findMatchingIngredient("pomidor", ingredientsList);
+            assertTrue(matchingIngredient.isPresent());
+            assertEquals("kawałki", matchingIngredient.get().getUnit());
+            assertEquals(4, matchingIngredient.get().getAmount(), 0.01);
 
-            assertEquals("sałata", ingredientsList.get(1).get(0));
-            assertEquals("gramy", ingredientsList.get(1).get(1));
-            assertEquals("100.0", ingredientsList.get(1).get(2));
+            matchingIngredient = findMatchingIngredient("sałata", ingredientsList);
+            assertTrue(matchingIngredient.isPresent());
+            assertEquals("gramy", matchingIngredient.get().getUnit());
+            assertEquals(100, matchingIngredient.get().getAmount(), 0.01);
 
-            assertEquals("makaron", ingredientsList.get(2).get(0));
-            assertEquals("gramy", ingredientsList.get(2).get(1));
-            assertEquals("200.0", ingredientsList.get(2).get(2));
+            matchingIngredient = findMatchingIngredient("makaron", ingredientsList);
+            assertTrue(matchingIngredient.isPresent());
+            assertEquals("gramy", matchingIngredient.get().getUnit());
+            assertEquals(400, matchingIngredient.get().getAmount(), 0.01);
         }
     }
 
-    @Test
-    public void testCombineIngredients() {
-        List<List<String>> ingredients = Arrays.asList(
-                Arrays.asList("pomidor", "kawałki", "2.0"),
-                Arrays.asList("pomidor", "kawałki", "3.0"),
-                Arrays.asList("makaron", "gramy", "200.0"),
-                Arrays.asList("sałata", "gramy", "100.0"),
-                Arrays.asList("makaron", "gramy", "100.0")
-        );
-
-        List<List<String>> combinedIngredients = IngredientsListGenerator.combineIngredients(ingredients);
-
-        assertEquals(3, combinedIngredients.size());
-
-        assertEquals("pomidor", combinedIngredients.get(0).get(0));
-        assertEquals("kawałki", combinedIngredients.get(0).get(1));
-        assertEquals("5.0", combinedIngredients.get(0).get(2));
-
-        assertEquals("sałata", combinedIngredients.get(1).get(0));
-        assertEquals("gramy", combinedIngredients.get(1).get(1));
-        assertEquals("100.0", combinedIngredients.get(1).get(2));
-
-        assertEquals("makaron", combinedIngredients.get(2).get(0));
-        assertEquals("gramy", combinedIngredients.get(2).get(1));
-        assertEquals("300.0", combinedIngredients.get(2).get(2));
+    private Optional<Ingredient> findMatchingIngredient(String name, List<Ingredient> ingredients) {
+        return ingredients.stream()
+                .filter(ingredient -> name.equals(ingredient.getName()))
+                .findFirst();
     }
 }
