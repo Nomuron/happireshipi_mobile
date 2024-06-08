@@ -4,12 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.recipes.control.CheckedIngredientsCache;
 import com.example.myapplication.recipes.control.IngredientsListGenerator;
 import com.example.myapplication.recipes.entity.Cart;
 import com.example.myapplication.recipes.entity.Ingredient;
@@ -55,9 +57,13 @@ public class SelectedRecipesIngredientsAdapter extends RecyclerView.Adapter<Sele
     public void onBindViewHolder(final ViewHolder holder, int position) {
         IngredientsListGenerator ingredientListGenerator = new IngredientsListGenerator(context);
         List<Ingredient> ingredientsList = ingredientListGenerator.generateIngredientsList(Cart.getCartItems());
-        holder.recipeDetailIngredient.setText(ingredientsList.get(position).getName());
-        holder.recipeDetailIngredientUnit.setText(ingredientsList.get(position).getUnit());
-        holder.recipeDetailIngredientAmount.setText(String.valueOf(ingredientsList.get(position).getAmount()));
+        Ingredient ingredient = ingredientsList.get(position);
+        holder.recipeDetailIngredient.setText(ingredient.getName());
+        holder.recipeDetailIngredientUnit.setText(ingredient.getUnit());
+        holder.recipeDetailIngredientAmount.setText(String.valueOf(ingredient.getAmount()));
+        holder.recipeDetailIngredientCheckBox.setChecked(CheckedIngredientsCache.getIsChecked(ingredient));
+
+        holder.recipeDetailIngredientCheckBox.setOnClickListener((buttonView) -> CheckedIngredientsCache.toggle(ingredient));
     }
 
     /**
@@ -78,6 +84,7 @@ public class SelectedRecipesIngredientsAdapter extends RecyclerView.Adapter<Sele
         TextView recipeDetailIngredientAmount;
         TextView recipeDetailIngredientUnit;
         TextView recipeDetailIngredient;
+        CheckBox recipeDetailIngredientCheckBox;
 
         /**
          * Constructs a new MyViewHolder with the specified itemView.
@@ -89,6 +96,7 @@ public class SelectedRecipesIngredientsAdapter extends RecyclerView.Adapter<Sele
             recipeDetailIngredientAmount = itemView.findViewById(R.id.RecipeDetailIngredientAmount);
             recipeDetailIngredientUnit = itemView.findViewById(R.id.RecipeDetailIngredientUnit);
             recipeDetailIngredient = itemView.findViewById(R.id.RecipeDetailIngredient);
+            recipeDetailIngredientCheckBox = itemView.findViewById(R.id.RecipeDetailIngredientCheckBox);
         }
     }
 }
