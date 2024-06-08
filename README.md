@@ -21,4 +21,5 @@ of portions of each specific meal.
 - additional showing of list of chosen recipes, with amount of chosen portions(S)
 - filtering of recipes on a base of type of the meal: "breakfast", "lunch", "dinner", "supper"(C)
 - saving shopping list to the file(C)
+- add checkboxes to shopping list (C)
 - adding personal recipes(W)
