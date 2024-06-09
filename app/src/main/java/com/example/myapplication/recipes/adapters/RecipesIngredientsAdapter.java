@@ -81,16 +81,6 @@ public class RecipesIngredientsAdapter extends RecyclerView.Adapter<RecipesIngre
     }
 
     /**
-     * Retrieves a string value from the application's resources.
-     *
-     * @param resourceId The resource identifier of the string.
-     * @return The string data associated with the resource, stripped of styled text information.
-     */
-    private String getString(int resourceId) {
-        return context.getResources().getString(resourceId);
-    }
-
-    /**
      * Class which constructs a new MyViewHolder
      */
     public static class MyViewHolder extends RecyclerView.ViewHolder {
